@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice">
+ <defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d9a8"/><stop offset=".35" stop-color="#f3c489"/><stop offset=".6" stop-color="#9cc3a4"/><stop offset="1" stop-color="#2f5d45"/></linearGradient>
+  <linearGradient id="river" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fc4c9"/><stop offset="1" stop-color="#3f8f9a"/></linearGradient>
+  <g id="pine"><path d="M0-34L10-14H5L14 2H-14L-5-14H-10Z" fill="#1f4a33"/><rect x="-2" y="2" width="4" height="7" fill="#4a3220"/></g>
+  <g id="birch"><ellipse cx="0" cy="-18" rx="11" ry="17" fill="#6f9e4e"/><rect x="-1.5" y="-6" width="3" height="16" fill="#f4efe4"/><rect x="-1.5" y="0" width="3" height="1.5" fill="#333"/></g>
+  <g id="house"><path d="M-14 0V-14L0-26 14-14V0Z" fill="#a8643a"/><path d="M-17-13L0-29 17-13" fill="none" stroke="#5b3320" stroke-width="4"/><rect x="-5" y="-11" width="10" height="8" fill="#f6d27a"/><path d="M-5-7h10M0-11v8" stroke="#5b3320" stroke-width="1"/></g>
+ </defs>
+ <rect width="390" height="844" fill="url(#sky)"/>
+ <circle cx="300" cy="110" r="46" fill="#fbe6b6"/><circle cx="300" cy="110" r="30" fill="#fff4d6"/>
+ <path d="M0 250Q90 200 180 240T390 220V844H0Z" fill="#b6c99a"/>
+ <path d="M0 330Q120 280 230 320T390 300V844H0Z" fill="#7fa774"/>
+ <g transform="translate(0 312)"><use href="#pine" x="20"/><use href="#pine" x="44" y="6"/><use href="#pine" x="70"/><use href="#pine" x="330" y="-6"/><use href="#pine" x="356"/><use href="#birch" x="300" y="2"/></g>
+ <path d="M-20 520C80 470 160 560 250 520S380 470 420 500V560C360 540 300 580 240 590S90 560 -20 600Z" fill="url(#river)" opacity=".9"/>
+ <path d="M30 540c40-10 70 6 110 0M200 560c40-8 70 4 120-6" stroke="#d9f1f2" stroke-width="2" fill="none" opacity=".7"/>
+ <path d="M0 610Q140 580 260 620T390 610V844H0Z" fill="#4f7d55"/>
+ <g transform="translate(0 640)"><use href="#house" x="60"/><use href="#house" x="96" y="8"/><use href="#birch" x="130" y="4"/><use href="#pine" x="300"/><use href="#pine" x="328" y="8"/><use href="#pine" x="356"/></g>
+ <path d="M0 720Q160 690 390 730V844H0Z" fill="#2f5d45"/>
+</svg>

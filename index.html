@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Михаил Пирогов, PirogovLab">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#123326">
+<title>Мари филворд — ищи марийские слова</title>
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="css/style.css?v=8">
+</head>
+<body>
+<div id="bg"></div><div id="shade"></div>
+<div id="app">
+ <section id="scrHome" class="screen on">
+  <header class="hbar"><button class="ib" id="bHow" aria-label="Как играть">?</button><button class="ib" id="bLb" aria-label="Таблица лидеров">🏆</button><button class="ib" id="bSnd" aria-label="Выключить звук">🔊</button><div class="sp"></div><div class="score" id="hScore"></div><div class="coins"><i></i><b>0</b></div></header>
+  <div class="logo">
+   <div class="orn"></div>
+   <h1>Мари <span>филворд</span></h1>
+   <p>Марийский филворд · ищи слова змейкой</p>
+   <div class="orn"></div>
+  </div>
+  <div class="sect">Сложность</div>
+  <div class="modes" id="modes"></div>
+  <div class="modesub" id="modeSub"></div>
+  <button class="playcard" id="bPlay">
+   <span class="pc-ic" id="pcIcon">👪</span>
+   <span class="pc-t"><b>Играть</b><small id="playLvl">Уровень 1</small></span>
+   <span class="pc-go">▶</span>
+  </button>
+  <div class="sect">Темы</div>
+  <div class="themes" id="themes"></div>
+  <button class="link" id="bHow2">Как играть</button>
+  <div class="brand">PirogovLab · марий йылме</div>
+ </section>
+ <section id="scrGame" class="screen">
+  <header class="gbar">
+   <button class="ib" id="bBack" aria-label="Назад">‹</button>
+   <div class="gi" id="gIcon"></div><div class="gt"><b id="gTheme"></b><i id="gRu" class="ru"></i><small id="gLvl"></small></div>
+   <div class="coins"><i></i><b>0</b></div>
+  </header>
+  <div class="prog"><div id="progBar"></div><span id="progTxt"></span><span class="bonus" id="bonusCnt">★ бонус: 0</span></div>
+  <div class="curwrap"><div id="cur" class="cur"></div></div>
+  <div class="board" id="board">
+   <div id="grid"></div>
+   <svg id="lines"></svg>
+  </div>
+  <div id="tr" class="tr"></div>
+  <div id="found" class="found"></div>
+  <div class="tools">
+   <button class="tb" id="bHint"><span>💡</span>Подсказка<em>30</em></button>
+   <button class="tb ad" id="bAdHint"><span>🎬</span>Бесплатно</button>
+  </div>
+ </section>
+</div>
+<div id="tut" class="tut"><div id="finger">👆</div><div class="tcard" id="tcard"><p id="tTxt"></p><div class="tbtns"><button id="tSkip" class="ghost">Пропустить</button><button id="tNext" class="pri">Дальше</button></div></div></div>
+<div id="lbm" class="modal"><div class="card lbcard">
+ <button class="x" id="lbClose" aria-label="Закрыть">✕</button>
+ <h2>Таблица лидеров</h2><div class="lbsub">Очки за слова, бонусы и уровни</div>
+ <div class="tabs"><button class="tab on" data-p="week">Неделя</button><button class="tab" data-p="all">Всё время</button></div>
+ <ol class="lblist" id="lbList"></ol>
+ <div class="lbme" id="lbMe"></div>
+ <div class="lbnote" id="lbNote"></div>
+ <form class="nick" id="lbNick"><input id="lbName" maxlength="16" placeholder="Ваш ник" autocomplete="off"><button class="pri" type="submit">Сохранить</button></form><button class="lbdel" id="lbDel" type="button">Удалить меня из таблицы</button>
+ <div class="lberr" id="lbErr"></div>
+ <div class="lbrule">Очки: слово 2 · бонусное слово 1 · уровень 20; множитель режима: Куштылго ×1, Кокла ×2, Неле ×3</div>
+</div></div>
+<div id="win" class="modal"><div class="card"><div class="burst" id="burst"></div><div class="stars">⭐⭐⭐</div><h2>Сай! Молодец!</h2><div class="wtheme" id="winTheme"></div><p id="winTxt"></p><p id="winScore" class="winscore"></p><p id="winBonus" class="winbonus"></p><div id="winWords"></div><button class="pri big" id="bNext">Дальше</button></div></div>
+<script src="data/words.js?v=8"></script>
+<script src="data/bonus.js?v=8"></script>
+<script src="js/config.js?v=8"></script>
+<script src="js/platform.js?v=8"></script>
+<script src="js/sound.js?v=8"></script>
+<script src="js/adapters/android.js?v=8"></script>
+<script src="js/gen.js?v=8"></script>
+<script src="js/levels.js?v=8"></script>
+<script src="js/leaderboard.js?v=8"></script>
+<script src="js/app.js?v=8"></script>
+</body>
+</html>

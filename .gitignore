@@ -1,0 +1,27 @@
+# signing keys and passwords: NEVER commit
+release/keys/
+*.p12
+*.jks
+*.keystore
+keystore.properties
+local.properties
+# deploy scripts (server access) are kept locally only
+tools/deploy_*.sh
+# build outputs
+android/build/
+android/app/build/
+android/.gradle/
+android/app/src/main/assets/www/
+release/
+*.apk
+*.aab
+*.zip
+# dictionary-derived data (Марий йылме мутер / МарНИИЯЛИ, Васильев–Учаев: not openly licensed) — rebuilt locally with tools/build_words.py and tools/build_bonus.py
+data/words.js
+data/bonus.js
+server/bad_mhr.json
+# AI photo sources (webp versions are in img/bg/), live site copies, screenshots
+img/bg_src/
+site_stage/
+shots/
+__pycache__/
