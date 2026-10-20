@@ -24,6 +24,7 @@
 | `tools/` | данные (`build_words.py`, `build_bonus.py`), сборки (`build_release.py yandex\|android\|web`, `build_android.sh`), графика и ассеты магазинов |
 | `test/` | Playwright-тесты (уровни, правила, лидерборд, раскладка 320–1920 px, попапы, обучение, звук, Яндекс- и Android-сборки) |
 | `site/privacy/` | политика конфиденциальности (RU/EN) |
+| `store/` | тексты для магазинов, ответы для форм Google Play, иконка, графика и скриншоты |
 
 ## Сборка
 ```bash
