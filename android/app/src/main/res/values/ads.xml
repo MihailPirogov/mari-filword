@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Yandex Mobile Ads (Рекламная сеть Яндекса) — the ONLY place with ad unit IDs for «Мари филворд» (ru.pirogovlab.marifilword).
-     TODO(real IDs): partner.yandex.ru → Мобильные приложения → «Мари филворд» → create 3 units, then replace the three
-     ad_*_id values below with R-M-<appId>-<n> and rebuild: tools/build_android.sh (bump versionCode in app/build.gradle).
-     Until then ALL builds use Yandex demo units (ads are shown, no revenue). -->
+     App «Мари филворд» in partner.yandex.ru: app ID 20251525 (test mode until a store link is added there).
+     Real units: banner R-M-20251525-1, interstitial R-M-20251525-2, rewarded R-M-20251525-3 (reward «1 подсказка»).
+     Debug builds use the demo units automatically; release with demo units: gradle assembleRelease -PadsDemo=true -->
 <resources>
-    <string name="ad_banner_id" translatable="false">demo-banner-yandex</string>              <!-- TODO R-M-XXXXXXXX-1  sticky/adaptive banner -->
-    <string name="ad_interstitial_id" translatable="false">demo-interstitial-yandex</string>  <!-- TODO R-M-XXXXXXXX-2  interstitial -->
-    <string name="ad_rewarded_id" translatable="false">demo-rewarded-yandex</string>          <!-- TODO R-M-XXXXXXXX-3  rewarded «Подсказка» -->
+    <string name="ad_banner_id" translatable="false">R-M-20251525-1</string>  <!-- sticky adaptive banner (size set in code) -->
+    <string name="ad_interstitial_id" translatable="false">R-M-20251525-2</string>  <!-- interstitial -->
+    <string name="ad_rewarded_id" translatable="false">R-M-20251525-3</string>  <!-- rewarded «Подсказка» -->
     <!-- Yandex demo units (always fill, no revenue) -->
     <string name="ad_banner_demo_id" translatable="false">demo-banner-yandex</string>
     <string name="ad_interstitial_demo_id" translatable="false">demo-interstitial-yandex</string>
