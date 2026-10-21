@@ -11,6 +11,7 @@ out = {'yandex': 'release/build/yandex', 'android': 'android/app/src/main/assets
 shutil.rmtree(out, ignore_errors=True); os.makedirs(out)
 for d in ('css', 'js', 'data', 'img'): shutil.copytree(d, f'{out}/{d}', ignore=shutil.ignore_patterns('bg_src'))
 if target != 'yandex': os.remove(f'{out}/js/adapters/yandex.js')
+if target != 'web': os.remove(f'{out}/js/adapters/rsya.js')   # RSYA web ads: public web build only
 if target != 'android' and target != 'web': pass
 s = open('index.html', encoding='utf-8').read()
 s = re.sub(r'\?v=\d+[a-z]?', '?v=' + V, s)
@@ -19,6 +20,7 @@ if target == 'yandex': pre = '<script src="/sdk.js"></script>\n' + pre
 s = s.replace('<script src="data/words.js', pre + '<script src="data/words.js', 1)
 if target == 'yandex': s = s.replace('<script src="js/adapters/android.js', f'<script src="js/adapters/yandex.js?v={V}"></script>\n<script src="js/adapters/android.js', 1)
 if target == 'web':
+    s = s.replace('<script src="js/adapters/android.js', f'<script src="js/adapters/rsya.js?v={V}"></script>\n<script src="js/adapters/android.js', 1)
     s = s.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="description" content="Мари филворд — бесплатная игра: ищи марийские слова змейкой на сетке, узнавай перевод. 1300+ уровней, 14 тем, три сложности.">\n<link rel="canonical" href="https://pirogovlab.ru/mari-filword/">', 1)
     ym = ('<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();'
           'for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})'
@@ -39,6 +41,7 @@ for dp, _, fs in os.walk(out):
         p = os.path.join(dp, f); t = open(p, encoding='utf-8', errors='ignore').read()
         if re.search(r'marlamuter|марламутер', t, re.I): bad.append(p + ': forbidden mention')
         if target != 'web' and ('mc.yandex' in t or '108319724' in t): bad.append(p + ': Metrika outside web')
+        if target != 'web' and ('adapters/rsya' in t or 'ads/system/context' in t or 'AdvManager' in t): bad.append(p + ': RSYA web ads outside web')
         if f.endswith('.html') and ('testBadge' in t or 'noindex' in t): bad.append(p + ': test marker')
         if target == 'yandex' and '/data/' not in p:
             for m in re.finditer(r'https?://[^\s"\'`<>)]+', t):
